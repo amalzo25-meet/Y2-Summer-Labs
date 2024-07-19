@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-
         <meta charset="UTF-8">
         <title>Fortune Teller</title>
-                <style>
+
+        <style>
             body {
                 background-image: url('https://www.disneyclips.com/images/images/genie-tongue.png');
                 background-repeat: no-repeat;
@@ -19,14 +19,15 @@
                 -webkit-text-stroke: 0.5px black;
             }
 
-
         </style>
     </head>
     <body>
 
-            <h3 class='outlined'>Your Fortune is:</h3>
-            <p class='outlined'> {{ fortune_ }}</p>
-
-                
+        <form action="/" method="POST">
+    <p class='outlined'>Type your name and birthday month to know your fortune!</p>
+    <input type="text" name="name" placeholder="Write Your name">
+    <input type="text" name="birthday" placeholder="Write Your Birthday Month">
+    <input type="submit" value="Submit">
+        </form>
     </body>
-    </html>
+</html>
