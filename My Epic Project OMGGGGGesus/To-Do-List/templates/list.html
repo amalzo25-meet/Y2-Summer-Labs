@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Standard</title>
+</head>
+<body>
+
+	<h1> Standard To-Do-List</h1>
+
+	<form action="/list" method="POST">
+		<input type="text" name="task" placeholder="Write Task Here"><br>
+<!-- 		<p>What type of task is it?</p>
+		<input type="text" name="" placeholder=”First Name> -->
+		<input type="submit" value="Add to list">
+	</form>
+	{% if tasks is not none %}
+	{% for i in tasks.values() %}
+	<form action="/deletetask" method = "POST">
+	<input type="checkbox" name="task1" value={{i}}>
+	<label for="task1"> {{ i }} </label>
+
+	<input type ="submit" value = "x">
+</form>
+
+	{% endfor %}
+	{% endif %}
+
+
+	<form method="POST" action="/clear_tasks">
+        <input type="submit"value="Clear All Tasks">
+    </form>
+
+</body>
+</html>

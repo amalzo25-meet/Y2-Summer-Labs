@@ -8,13 +8,19 @@
 <body>
 
 	<h1>Welcome to the home page!</h1>
+<form action="/signout" method="POST">
+	<input type="submit" value="Signout">
+</form>
 
-	<a href="url_for('signout')">
-	<button>Signout</button>
-	</a>
+	<p></p>
 
-	<form>
-		<input type="text">
+	<form action="/home" method="POST">
+
+	<input type="text" name="quote" placeholder="Quote"><br>
+	<input type="text" name="quoter" placeholder="Who said it">
+	<input type="submit" value="Submit">
+
+</form>
 
 </body>
 </html>
