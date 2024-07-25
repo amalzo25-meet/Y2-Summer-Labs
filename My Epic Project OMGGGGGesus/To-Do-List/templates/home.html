@@ -1,17 +1,171 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            padding-top: 20px; /* Move content closer to the top */
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 20px; /* Space between title and content */
+            font-size: 2em; /* Larger font size for the title */
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 30px; /* Space between subtitle and content */
+            font-size: 1.5em; /* Font size for the subtitle */
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px; /* Padding for the form box */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px; /* Width of the form box */
+            margin-top: 20px; /* Space from the top */
+        }
+
+        p {
+        	color: #003366;
+            font-size: 1.2em; /* Font size for section labels */
+            margin-bottom: 10px; /* Space below section labels */
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .radio-group div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Space between each radio option */
+        }
+
+        input[type="radio"] {
+            margin-right: 10px; /* Space between radio button and label */
+        }
+
+        label {
+            font-size: 1.1em; /* Font size for labels */
+            margin-right: 20px; /* Space between labels */
+        }
+
+        input[type="submit"] {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px; /* Padding for submit button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em; /* Font size for submit button */
+            margin-top: 20px; /* Space above the submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
 <body>
-	<h1> Welcome to the home page</h1><br>
 
-	<h2>what kind of list do you want?</h2><br>
+<h1>Welcome to the home page</h1>
 
-	<a href="/list">
-	<button>Standard</button>
-	</a>
+<h2>What music genre do you prefer listening to while doing tasks?</h2>
 
+<form action="/home" method="POST">
+    <div class="radio-group">
+        <p>Cleaning:</p>
+        <div>
+            <input type="radio" name="genrecl" value="pop" id="popcl">
+            <label for="popcl">pop</label>
+            <input type="radio" name="genrecl" value="indie" id="indiecl">
+            <label for="indiecl">indie</label>
+            <input type="radio" name="genrecl" value="rock" id="rockcl">
+            <label for="rockcl">rock</label>
+            <input type="radio" name="genrecl" value="jazz" id="jazzcl">
+            <label for="jazzcl">jazz</label>
+        </div>
+    </div>
 
+    <div class="radio-group">
+        <p>Studying:</p>
+        <div>
+            <input type="radio" name="genrest" value="pop" id="popst">
+            <label for="popst">pop</label>
+            <input type="radio" name="genrest" value="indie" id="indiest">
+            <label for="indiest">indie</label>
+            <input type="radio" name="genrest" value="rock" id="rockst">
+            <label for="rockst">rock</label>
+            <input type="radio" name="genrest" value="jazz" id="jazzst">
+            <label for="jazzst">jazz</label>
+        </div>
+    </div>
+
+    <div class="radio-group">
+        <p>Shopping:</p>
+        <div>
+            <input type="radio" name="genresh" value="pop" id="popsh">
+            <label for="popsh">pop</label>
+            <input type="radio" name="genresh" value="indie" id="indiesh">
+            <label for="indiesh">indie</label>
+            <input type="radio" name="genresh" value="rock" id="rocksh">
+            <label for="rocksh">rock</label>
+            <input type="radio" name="genresh" value="jazz" id="jazzsh">
+            <label for="jazzsh">jazz</label>
+        </div>
+    </div>
+
+    <div class="radio-group">
+        <p>Meditating:</p>
+        <div>
+            <input type="radio" name="genreme" value="pop" id="popme">
+            <label for="popme">pop</label>
+            <input type="radio" name="genreme" value="indie" id="indieme">
+            <label for="indieme">indie</label>
+            <input type="radio" name="genreme" value="rock" id="rockme">
+            <label for="rockme">rock</label>
+            <input type="radio" name="genreme" value="jazz" id="jazzme">
+            <label for="jazzme">jazz</label>
+        </div>
+    </div>
+
+    <div class="radio-group">
+        <p>Other:</p>
+        <div>
+            <input type="radio" name="genreot" value="pop" id="popot">
+            <label for="popot">pop</label>
+            <input type="radio" name="genreot" value="indie" id="indieot">
+            <label for="indieot">indie</label>
+            <input type="radio" name="genreot" value="rock" id="rockot">
+            <label for="rockot">rock</label>
+            <input type="radio" name="genreot" value="jazz" id="jazzot">
+            <label for="jazzot">jazz</label>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

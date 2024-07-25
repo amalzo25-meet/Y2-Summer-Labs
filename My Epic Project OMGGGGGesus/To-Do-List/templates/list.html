@@ -1,31 +1,158 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Standard</title>
+    <title>To-Do-List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .task-section, .genres-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #003366;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+
+        .task-list, .genres-list {
+            margin-top: 20px;
+        }
+
+        .task-item, .genre-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-item label {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        .task-item input[type="submit"] {
+            background-color: #fff;
+            color : #ff4d4d;
+        }
+
+        .task-item input[type="submit"]:hover {
+            background-color: #e60000;
+        }
+
+        h3 {
+            color: #003366;
+        }
+        h2 {
+        	color : #003366;
+        }
+
+        p {
+            color: #666;
+            margin: 0;
+        }
+
+        .genre-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .genre-item h3 {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
 
-	<h1> Standard To-Do-List</h1>
+    <h1>To-Do-List !</h1>
 
-	<form action="/list" method="POST">
-		<input type="text" name="task" placeholder="Write Task Here"><br>
-<!-- 		<p>What type of task is it?</p>
-		<input type="text" name="" placeholder=”First Name> -->
-		<input type="submit" value="Add to list">
-	</form>
-	{% if tasks is not none %}
-	{% for i in tasks.values() %}
-	<form action="/deletetask" method = "POST">
-	<input type="checkbox" name="task1" value={{i}}>
-	<label for="task1"> {{ i }} </label>
+    <div class="container">
+        <div class="task-section">
+            <form action="/list" method="POST">
+                <input type="text" name="task" placeholder="Write Task Here"><br>
+                <p>What type of task is it?</p>
+                <input type="radio" name="cat" value="cleaning" placeholder="cleaning">cleaning<br>
+                <input type="radio" name="cat" value="studying" placeholder="studying">studying<br>
+                <input type="radio" name="cat" value="shopping" placeholder="shopping">shopping<br>
+                <input type="radio" name="cat" value="meditation" placeholder="meditation">meditation<br>
+                <input type="radio" name="cat" value="other" placeholder="other">other<br>
+                <p></p>
+                <input type="submit" value="Add to list">
+            </form>
 
-	<input type ="submit" value = "x">
-</form>
+            {% if tasks is not none %}
+            <div class="task-list">
+            	<h2> The List: </h2>
+                {% for key, value in tasks.items() %}
+                <form action="/deletetask" method="POST" class="task-item">
+                    <input type="checkbox" name="task1" value="{{key}}">
+                    <label for="task1">{{value["name"]}}</label>
+                    <input type="submit" value="x">
+                </form>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
 
-	{% endfor %}
-	{% endif %}
-
-
-	<form method="POST" action="/clear_tasks">
+        <div class="genres-section">
+        	<h2>Music Recommendations based on your preferance</h2>
+            {% for key, value in genres.items() %}
+            <div class="genre-item">
+                <h3>{{key}}</h3>
+                <p>{{value}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+<form method="POST" action="/clear_tasks">
         <input type="submit"value="Clear All Tasks">
     </form>
 

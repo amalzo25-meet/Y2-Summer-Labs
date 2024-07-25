@@ -1,6 +1,79 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            padding-top: 20px; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px; 
+            font-size: 2em; 
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px; 
+        }
+
+        label {
+            font-size: 1.1em; 
+            margin-top: 10px;
+            align-self: flex-start; 
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px; /* Padding for input fields */
+            margin: 10px 0; /* Margin between fields */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em; /* Font size for input fields */
+        }
+
+        input[type="submit"] {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px; /* Padding for submit button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em; /* Font size for submit button */
+            margin-top: 20px; /* Space above the submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+
+        a {
+            margin-top: 20px; /* Space above the link */
+            color: #003366;
+            text-decoration: none;
+            font-size: 1.1em; /* Font size for the link */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -8,21 +81,15 @@
 <h1>Signup Here:</h1>
 
 <form action="/" method="POST">
-
-<label>Fullname:</label><br>
-<input type="text" name="fullname" placeholder="Fullname"><br>
-<p></p>
-<label>Username:</label><br>
-<input type="text" name="username" placeholder="Username"><br>
-<p></p>
-<label>Email:</label><br>
-<input type="text" name="email" placeholder="Email"><br>
-<p></p>
-<label>Password:</label><br>
-<input type="text" name="password" placeholder="Password"><br>
-<p></p>
-<input type="submit" value="Submit">
-
+    <label>Fullname:</label><br>
+    <input type="text" name="fullname" placeholder="Fullname"><br>
+    <label>Username:</label><br>
+    <input type="text" name="username" placeholder="Username"><br>
+    <label>Email:</label><br>
+    <input type="text" name="email" placeholder="Email"><br>
+    <label>Password:</label><br>
+    <input type="text" name="password" placeholder="Password"><br>
+    <input type="submit" value="Submit">
 </form>
 
 <a href="signin">Already have an account? Sign in here.</a>

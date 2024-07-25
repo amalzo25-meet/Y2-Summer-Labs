@@ -1,6 +1,72 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Signin</title>
+    <title>Signin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            padding-top: 20px; /* Adjusted to move content closer to the top */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px; /* Adjusted margin for spacing */
+            font-size: 2em; /* Larger font size for the title */
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px; /* Adjusted padding for the form box */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px; /* Adjusted width for the form box */
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Adjusted padding for input fields */
+            margin: 10px 0; /* Adjusted margin for spacing */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1.1em; /* Larger font size for input fields */
+        }
+
+        input[type="submit"] {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px; /* Adjusted padding for the submit button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em; /* Larger font size for the submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+
+        a {
+            margin-top: 20px; /* Adjusted margin for spacing */
+            color: #003366;
+            text-decoration: none;
+            font-size: 1.1em; /* Larger font size for the link */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -8,16 +74,15 @@
 <h1>Signin Here:</h1>
 
 <form action="/signin" method="POST">
-
-<input type="text" name="email" placeholder="Email">
-<input type="text" name="password" placeholder="Password">
-<input type="submit" value="Submit">
-
+    <input type="text" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Submit">
 </form>
 
-
-<a href="/">Don`t have an account? Sign up here.</a>
-
+<a href="/">Don't have an account? Sign up here.</a>
 
 </body>
 </html>
+
+</html>
+
